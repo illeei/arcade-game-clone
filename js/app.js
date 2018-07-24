@@ -58,26 +58,12 @@ function Player() {
 }
 
 var checkCollisions = function() {
-  if (player.y === enemy7.y) {
-    if (player.x >= enemy7.x - .5 && player.x <= enemy7.x + .5 ||
-        player.x >= enemy6.x - .5 && player.x <= enemy6.x + .5) {
-      player.x=2;
-      player.y=5;
-    }
-  }
-  else if (player.y === enemy5.y) {
-    if (player.x >= enemy5.x - .5 && player.x <= enemy5.x + .5 ||
-        player.x >= enemy4.x - .5 && player.x <= enemy4.x + .5) {
-      player.x=2;
-      player.y=5;
-    }
-  }
-  else if (player.y === enemy3.y) {
-    if (player.x >= enemy3.x - .5 && player.x <= enemy3.x + .5 ||
-        player.x >= enemy2.x - .5 && player.x <= enemy2.x + .5 ||
-        player.x >= enemy1.x - .5 && player.x <= enemy1.x + .5) {
-      player.x=2;
-      player.y=5;
+  for (enemy of allEnemies) {
+    if (player.y === enemy.y) {
+      if (player.x >= enemy.x - .5 && player.x <= enemy.x + .5) {
+            player.x = 2;
+            player.y=5;
+          }
     }
   }
 }
