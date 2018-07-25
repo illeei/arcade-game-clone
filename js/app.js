@@ -61,7 +61,6 @@ var checkCollisions = function() {
   for (enemy of allEnemies) {
     if (player.y === enemy.y) {
       if (player.x >= enemy.x - .75 && player.x <= enemy.x + .75) {
-            alert("stop");
             player.x = 2;
             player.y=5;
           }
